@@ -4,12 +4,7 @@ import("posix.socket");
 import("posix.fd");
 
 void test() {
-	String srcIP;
-//	if (SCRIPT_ARGV.getSize() > 0) {
-//		srcIP = SCRIPT_ARGV.get(1);
-//		System.p(srcIP);
-//	}
-	srcIP = "192.168.59.87";
+	String srcIP = "192.168.59.87";
 	String another_IP = "192.168.59.88";
 	int srcFamily = AF_INET;
 	int srcPort = 10001;

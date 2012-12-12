@@ -1,3 +1,3 @@
 #!/bin/sh
 
-minikonoha ebadf.k -Dhost=hoge
+minikonoha ebadf.k hoge

@@ -1,68 +1,24 @@
 //Wrtten by Joseph
 /*
-   This script is for socket() faults.
+   This script is for connect() fault
    */
-import("konoha.new");
 import("konoha.array");
-import("konoha.bytes");
-import("konoha.class");
+import("konoha.string");
 import("posix.socket");
-
-class MySocket {
-	int sockfd;
-	int domain;
-	int type;
-	int protocol;
-
-	MySocket(int given_domain, int given_type, int given_protocol) {
-		domain   = given_domain;
-		type     = given_type;
-		protocol = given_protocol;
-	}
-
-	@Abstract int socket();
-	@Abstract int connect();
-}
-
-class SuccSocket extends MySocket {
-	@Override int socket() {
-		return System.socket(domain, type, protocol);
-	}
-	@Override int connect(int socket, String dstIP, int dstPort, int family) {
-		return System.connect(socket, dstIP, dstPort, family);
-	}
-}
 
 void test() {
 //	destination
-	if (SCRIPT_ARGV.getSize() != 2) {
-		System.p("please input the IP address");
-	}
-	String given_IP = SCRIPT_ARGV.get(1);
-	String dstIP = given_IP;
+	String dstIP = "www.google.com";
 	int dstPort = 10001;
 	int dstFamily = AF_INET;
-
-//	source
-	String srcIP = "127.0.0.1";
-	int srcPort = 10002;
-	int srcFamily = AF_INET;
-
-//	socket class
-	SuccSocket sock = new SuccSocket(dstFamily, SOCK_STREAM, 0);
-	sock.domain = dstFamily;
-	sock.type = SOCK_STREAM;
+	int dstType = SOCK_STREAM;
+	int dstOPT = SO_BROADCAST;
 
 //	socket socket(System.socket())
-	sock.sockfd = sock.socket();
-	System.p(sock.sockfd);
-	int fd = sock.sockfd;
-
+	int sockfd = System.socket(dstFamily, dstType, dstOPT);
 //	socket connect(System.connect())
-	int ret = sock.connect(fd, dstIP, dstPort, dstFamily);
-	System.p(ret);
-
-	System.close(fd);
+	int ret = System.connect(sockfd, dstIP, dstPort, dstFamily);
+	System.close(sockfd);
 }
 
 test();

@@ -1,0 +1,54 @@
+validation:検証
+verification:根拠、照合
+inspection:綿密な調査->ex)inspection data:検査データ
+encounter:直面する
+obstacle:妨害
+scheme:構想、図解
+literature:文学、文献、論文
+proceed:収益、[行為を]開始する
+procedure:手続き、手段(やり方)
+defect:不具合、欠陥、異常、問題
+manipulate:[手で]操作する、コントロールする
+adequate:適切な、適任の、(根拠などが)足りる
+allocate:~を割り当てる、配分する
+portablility:(コ)移植性、携帯性
+semantical:意味論的
+semantically:意味的に->ex)semantically correct:意味的に正しい
+aid:援助、支援する
+unified:一つにまとめられた
+mutually:相互に
+exclusive:排他的な
+dimension:大きさ、次元
+diverse:様々な
+
+Requirements inspection defect types
+clarity:明快さ
+completeness:網羅性
+compliance:適合性、準拠(compliance to relevant standard)
+consistent:矛盾のない
+consistency:一貫性
+correctness:正確性
+testability:テスト容易性
+others
+
+Design and Source Code inspection defect types
+algorithm/method:アルゴリズム
+assignment/initialization:割り当て、代入
+checking:潜在的なエラーチェック
+data:データの扱い方、データ構造の定義の方法、ポインターやメモリのエラー
+external interface:ユーザインターフェース、外部のインターフェース
+internal interface:システムコンポーネントなど
+logic:ロジック(if, case, loop, etc.)
+non-functional defects:?
+timing/optimization:タイミングにより起こるエラー(潜在的な競合エラー)
+	パフォーマンスの問題
+other:
+
+Test Plan inspection defect types
+clarity:明瞭さ
+completeness:網羅性
+compliance:適合性、準拠
+correctness:正確さ
+testability:テスト容易性
+redundancy:冗長性
+others

@@ -8,7 +8,8 @@ import("posix.socket");
 
 void test() {
 //	destination
-	String dstIP = "192.168.122.179";
+//	String dstIP = "192.168.122.179";
+	String dstIP = "127.0.0.1";
 	int dstPort = 10001;
 	int dstFamily = AF_INET;
 	int dstType = SOCK_STREAM;
